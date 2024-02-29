@@ -6,6 +6,7 @@ import {
   AddressProfile,
   AddressScreen,
   CartScreen,
+  Payment,
   SearchScreen,
 } from '../modules';
 import { MainHeader, SecondaryHeader } from '../components';
@@ -29,21 +30,28 @@ const RootStack = () => {
         name={Routes.CartScreen}
         component={CartScreen}
         options={{
-          header: () => <SecondaryHeader title="Cart" />,
+          header: () => <SecondaryHeader title="Cart" wishlist={true} />,
         }}
       />
       <MainStack.Screen
         name={Routes.AddressScreen}
         component={AddressScreen}
         options={{
-          header: () => <SecondaryHeader title="Address" />,
+          header: () => <SecondaryHeader title="Address" wishlist={false} />,
         }}
       />
       <MainStack.Screen
         name={Routes.AddressProfile}
         component={AddressProfile}
         options={{
-          header: () => <SecondaryHeader title="Address" />,
+          header: () => <SecondaryHeader title="Address" wishlist={false} />,
+        }}
+      />
+      <MainStack.Screen
+        name={Routes.Payment}
+        component={Payment}
+        options={{
+          header: () => <SecondaryHeader title="Payment" wishlist={false} />,
         }}
       />
     </MainStack.Navigator>

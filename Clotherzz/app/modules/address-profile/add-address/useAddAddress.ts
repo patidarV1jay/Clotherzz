@@ -1,9 +1,9 @@
-import { useFormik } from 'formik';
-import { AddressSchema } from '../../../constants';
-import { FormikValuesTypes } from '../../../types';
 import axios from 'axios';
+import { useFormik } from 'formik';
 import { useEffect, useState } from 'react';
 import { ToastAndroid } from 'react-native';
+import { AddressSchema } from '../../../constants';
+import { FormikValuesTypes } from '../../../types';
 
 const useAddAddress = () => {
   const [pincodeArea, setPinCodeArea] = useState<ApiResponse>({});

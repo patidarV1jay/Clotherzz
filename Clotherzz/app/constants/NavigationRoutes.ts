@@ -10,4 +10,5 @@ export enum Routes {
   AddressScreen = 'AddressScreen',
   ProfileTab = 'ProfileTab',
   AddressProfile = 'Address',
+  Payment = 'Payment',
 }

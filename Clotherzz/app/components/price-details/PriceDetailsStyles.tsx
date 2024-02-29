@@ -4,7 +4,6 @@ import { Colors, moderateScale, verticleScale } from '../../themes';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.light,
-    marginTop: verticleScale(20),
     borderRadius: moderateScale(5),
     padding: moderateScale(10),
   },
