@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   cartItemContainer: {
     backgroundColor: Colors.light,
-    marginTop: verticleScale(25),
+    marginVertical: verticleScale(40),
     padding: moderateScale(10),
     borderRadius: moderateScale(5),
     flexDirection: 'row',
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
   iconsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginTop: verticleScale(20),
   },
   iconContainer: {
     alignItems: 'center',

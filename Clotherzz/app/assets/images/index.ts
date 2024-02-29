@@ -6,4 +6,6 @@ export default {
   poster2: require('./poster2.png'),
   signup: require('./signup.png'),
   noAddress: require('./noAddress.png'),
+  phonepe: require('./phonepe.png'),
+  gpay: require('./googlepay.png'),
 };

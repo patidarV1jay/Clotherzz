@@ -32,9 +32,7 @@ const CartScreen = () => {
         <View style={styles.header}>
           <ShoppingCart size={28} weight="bold" color={Colors.purple} />
           <View style={styles.hrLine} />
-          <Pressable onPress={navigateToAddress}>
-            <MapPin size={28} />
-          </Pressable>
+          <MapPin size={28} />
           <View style={styles.hrLine} />
           <Wallet size={28} />
         </View>
@@ -86,7 +84,7 @@ const CartScreen = () => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Pressable style={styles.placeOrderButton}>
+        <Pressable style={styles.placeOrderButton} onPress={navigateToAddress}>
           <Text style={styles.placeOrderText}>Place Order</Text>
         </Pressable>
       </View>

@@ -7,7 +7,7 @@ import styles from './SecondaryHeaderStyles';
 import { PropsType } from './types';
 import useSecondaryHeader from './useSecondaryHeader';
 
-const SecondaryHeader = ({ title }: PropsType) => {
+const SecondaryHeader = ({ title, wishlist }: PropsType) => {
   const { navigation } = useSecondaryHeader();
 
   return (
@@ -23,9 +23,15 @@ const SecondaryHeader = ({ title }: PropsType) => {
           </Pressable>
           <Text style={styles.cartText}>{title}</Text>
         </View>
-        <Pressable>
-          <Heart color={Colors.light} weight="bold" size={moderateScale(26)} />
-        </Pressable>
+        {wishlist && (
+          <Pressable>
+            <Heart
+              color={Colors.light}
+              weight="bold"
+              size={moderateScale(26)}
+            />
+          </Pressable>
+        )}
       </View>
     </SafeAreaView>
   );
