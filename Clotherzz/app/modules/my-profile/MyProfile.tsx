@@ -18,7 +18,6 @@ const MyProfile = () => {
 
   const { handleSubmit } = formik;
   const { birthDate, showDatepicker } = useDateTimePicker();
-  console.log(birthDate);
   return (
     <View style={styles.container}>
       <View style={styles.wrapperContainer}>

@@ -1,13 +1,14 @@
 import { CaretLeft } from 'phosphor-react-native';
 import React from 'react';
 import {
+  ActivityIndicator,
   KeyboardAvoidingView,
   Modal,
   Pressable,
   ScrollView,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 import { CustomTextInput } from '../../../components';
 import { Colors, moderateScale, verticleScale } from '../../../themes';
@@ -15,7 +16,7 @@ import styles from './AddAddressStyles';
 import useAddAddress from './useAddAddress';
 
 const AddAddress = ({ isVisible, handleVisible }: PropsType) => {
-  const { formik, pincodeArea } = useAddAddress();
+  const { formik, pincodeArea, loading } = useAddAddress();
   const { handleSubmit, values } = formik;
 
   return (
@@ -37,14 +38,8 @@ const AddAddress = ({ isVisible, handleVisible }: PropsType) => {
         <KeyboardAvoidingView behavior="position">
           <ScrollView
             contentContainerStyle={{ paddingBottom: verticleScale(100) }}>
+            <CustomTextInput formik={formik} title="name" heading="Name" />
             <CustomTextInput
-              placeholder="Name"
-              formik={formik}
-              title="name"
-              heading="Name"
-            />
-            <CustomTextInput
-              placeholder="Mobile"
               formik={formik}
               title="mobile"
               heading="Mobile"
@@ -52,19 +47,16 @@ const AddAddress = ({ isVisible, handleVisible }: PropsType) => {
               maxLength={10}
             />
             <CustomTextInput
-              placeholder="Address"
               formik={formik}
               title="address"
               heading="Address"
             />
             <CustomTextInput
-              placeholder="Locality"
               formik={formik}
               title="locality"
               heading="Locality"
             />
             <CustomTextInput
-              placeholder="Pin"
               formik={formik}
               title="pincode"
               heading="Pincode"
@@ -74,23 +66,31 @@ const AddAddress = ({ isVisible, handleVisible }: PropsType) => {
             <View style={styles.horizontalSpacing}>
               <Text style={styles.heading}>City / District</Text>
               <View style={styles.inputBox}>
-                <Text style={styles.inputBoxText}>
-                  {pincodeArea?.Status == 'Error'
-                    ? pincodeArea?.Message
-                    : pincodeArea?.PostOffice &&
-                      pincodeArea?.PostOffice[0]?.District}
-                </Text>
+                {loading ? (
+                  <ActivityIndicator style={styles.inputBoxText} />
+                ) : (
+                  <Text style={styles.inputBoxText}>
+                    {pincodeArea?.Status == 'Error'
+                      ? pincodeArea?.Message
+                      : pincodeArea?.PostOffice &&
+                        pincodeArea?.PostOffice[0]?.District}
+                  </Text>
+                )}
               </View>
             </View>
             <View style={styles.horizontalSpacing}>
               <Text style={styles.heading}>State</Text>
               <View style={styles.inputBox}>
-                <Text style={styles.inputBoxText}>
-                  {pincodeArea?.Status == 'Error'
-                    ? pincodeArea?.Message
-                    : pincodeArea?.PostOffice &&
-                      pincodeArea?.PostOffice[0]?.State}
-                </Text>
+                {loading ? (
+                  <ActivityIndicator style={styles.inputBoxText} />
+                ) : (
+                  <Text style={styles.inputBoxText}>
+                    {pincodeArea?.Status == 'Error'
+                      ? pincodeArea?.Message
+                      : pincodeArea?.PostOffice &&
+                        pincodeArea?.PostOffice[0]?.State}
+                  </Text>
+                )}
               </View>
               <TouchableOpacity
                 style={styles.saveButton}
