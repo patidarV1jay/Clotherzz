@@ -3,7 +3,7 @@ import { Heart, House, User } from 'phosphor-react-native';
 import { Text, View } from 'react-native';
 import { MainHeader } from '../components';
 import { Routes, ScreenStrings } from '../constants';
-import { HomePage, ProfileTab } from '../modules';
+import { HomePage, ProfileTab, Wishlist } from '../modules';
 import { Colors, appStyle, moderateScale } from '../themes';
 
 const BottomTab = createBottomTabNavigator();
@@ -21,7 +21,7 @@ const TabNavigation = () => {
         name={Routes.HomePage}
         component={HomePage}
         options={{
-          header: () => <MainHeader />,
+          header: () => <MainHeader title="Clotherzz"/>,
           tabBarIcon: ({ focused }) => {
             return (
               <View style={{ alignItems: 'center' }}>
@@ -42,9 +42,9 @@ const TabNavigation = () => {
       />
       <BottomTab.Screen
         name={Routes.Signin}
-        component={HomePage}
+        component={Wishlist}
         options={{
-          header: () => <MainHeader />,
+          header: () => <MainHeader title='Wishlist' />,
           tabBarIcon: ({ focused }) => {
             return (
               <View style={{ alignItems: 'center' }}>
@@ -66,7 +66,7 @@ const TabNavigation = () => {
         name={Routes.ProfileTab}
         component={ProfileTab}
         options={{
-          header: () => <MainHeader />,
+          header: () => <MainHeader title='Profile' />,
           tabBarIcon: ({ focused }) => {
             return (
               <View style={{ alignItems: 'center' }}>

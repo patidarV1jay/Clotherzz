@@ -7,6 +7,7 @@ import { FormikValuesTypes } from '../../../types';
 
 const useAddAddress = () => {
   const [pincodeArea, setPinCodeArea] = useState<ApiResponse>({});
+  const [loading, setLoading] = useState<boolean>(false);
 
   const formik = useFormik<FormikValuesTypes>({
     initialValues: {
@@ -27,11 +28,14 @@ const useAddAddress = () => {
 
   const fetchFunc = async () => {
     try {
+      setLoading(true)
       const response = await axios.get(
         'https://api.postalpincode.in/pincode/' + formik.values.pincode,
       );
       setPinCodeArea(response?.data[0]);
+      setLoading(false)
     } catch (error) {
+      setLoading(false)
       console.log(error);
     }
   };
@@ -47,6 +51,7 @@ const useAddAddress = () => {
   return {
     formik,
     pincodeArea,
+    loading
   };
 };
 
