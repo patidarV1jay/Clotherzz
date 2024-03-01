@@ -11,4 +11,5 @@ export enum Routes {
   ProfileTab = 'ProfileTab',
   AddressProfile = 'Address',
   Payment = 'Payment',
+  MyProfile = 'My Profile',
 }

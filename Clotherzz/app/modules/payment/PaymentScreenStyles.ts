@@ -85,18 +85,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: moderateScale(10),
   },
-  netPay:{
+  netPay: {
     fontSize: moderateScale(12),
-    color: Colors.light
+    color: Colors.light,
   },
-  price:{
+  price: {
     fontSize: moderateScale(20),
     color: Colors.light,
-    fontWeight: '500'
+    fontWeight: '500',
   },
-  priceContainer:{
-    marginLeft: horizontalScale(10)
-  }
+  priceContainer: {
+    marginLeft: horizontalScale(10),
+  },
 });
 
 export default styles;

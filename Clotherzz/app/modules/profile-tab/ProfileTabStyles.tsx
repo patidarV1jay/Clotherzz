@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   hrLine:{
     borderTopWidth: 1,
     borderColor: Colors.offShade,
-    marginTop: verticleScale(40)
+    marginTop: verticleScale(40),
+    marginBottom: verticleScale(60)
     
   }
 });
