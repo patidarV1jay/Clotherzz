@@ -4,7 +4,6 @@ import styles from './CustomTextInputStyles';
 import { PropsType } from './types';
 
 const CustomTextInput = ({
-  placeholder,
   formik,
   title,
   heading,
@@ -16,7 +15,6 @@ const CustomTextInput = ({
     <View style={styles.container}>
       <Text style={styles.heading}>{heading}</Text>
       <TextInput
-        placeholder={placeholder}
         onChangeText={handleChange(title)}
         onBlur={handleBlur(title)}
         value={values.title}

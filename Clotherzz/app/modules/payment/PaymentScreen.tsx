@@ -1,21 +1,16 @@
-import { View, Text, Image, Pressable } from 'react-native';
-import styles from './PaymentScreenStyles';
 import {
-  ShoppingCart,
-  MapPin,
-  Wallet,
   Circle,
+  MapPin,
   RadioButton,
+  ShoppingCart,
+  Wallet,
 } from 'phosphor-react-native';
-import {
-  Colors,
-  horizontalScale,
-  moderateScale,
-  verticleScale,
-} from '../../themes';
+import { Image, Pressable, Text, View, Animated } from 'react-native';
 import { Images } from '../../assets';
-import usePaymentScreen from './usePaymentScreen';
 import { PriceDetails } from '../../components';
+import { Colors, moderateScale } from '../../themes';
+import styles from './PaymentScreenStyles';
+import usePaymentScreen from './usePaymentScreen';
 
 const PaymentScreen = () => {
   const { isSelected, handleUpiSelection, upiMethod } = usePaymentScreen();

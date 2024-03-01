@@ -19,3 +19,20 @@ export const AddressSchema = Yup.object().shape({
   pincode: Yup.string().required(ValidationStrings.required),
   locality: Yup.string().required(ValidationStrings.required),
 });
+
+export const ProfileSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required(ValidationStrings.required),
+  lastName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required(ValidationStrings.required),
+  email: Yup.string()
+    .required(ValidationStrings.required)
+    .matches(EmailRegEx, ValidationStrings.invalidMail),
+  mobile: Yup.string()
+    .required(ValidationStrings.required)
+    .matches(NumberRegEx, ValidationStrings.phoneInvalid),
+});

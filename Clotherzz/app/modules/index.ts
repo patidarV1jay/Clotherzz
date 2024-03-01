@@ -6,3 +6,4 @@ export * from './address';
 export * from './profile-tab';
 export * from './address-profile';
 export * from './payment';
+export * from './my-profile';

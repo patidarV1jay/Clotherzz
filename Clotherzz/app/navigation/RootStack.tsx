@@ -8,6 +8,7 @@ import {
   CartScreen,
   Payment,
   SearchScreen,
+  MyProfile,
 } from '../modules';
 import { MainHeader, SecondaryHeader } from '../components';
 const MainStack = createNativeStackNavigator();
@@ -52,6 +53,13 @@ const RootStack = () => {
         component={Payment}
         options={{
           header: () => <SecondaryHeader title="Payment" wishlist={false} />,
+        }}
+      />
+      <MainStack.Screen
+        name={Routes.MyProfile}
+        component={MyProfile}
+        options={{
+          header: () => <SecondaryHeader title="My Profile" wishlist={true} />,
         }}
       />
     </MainStack.Navigator>
