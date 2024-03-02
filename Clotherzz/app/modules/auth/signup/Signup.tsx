@@ -15,7 +15,7 @@ import { ScreenStrings } from '../../../constants';
 import { Colors } from '../../../themes';
 
 const Signup = () => {
-  const { number, handleNumber, handleSubmit } = useSignup();
+  const { number, handleNumber, handleSubmit, navigateToTnC } = useSignup();
 
   return (
     <View style={styles.container}>
@@ -51,9 +51,12 @@ const Signup = () => {
       </KeyboardAvoidingView>
       <Text style={styles.termsAndCondition}>
         {ScreenStrings.tnC}{' '}
-        <Text style={styles.underLineText}>{ScreenStrings.termsOfUse}</Text>{' '}
+        <Text style={styles.underLineText} onPress={navigateToTnC}>{ScreenStrings.termsOfUse}</Text>{' '}
         {ScreenStrings.and}{' '}
-        <Text style={styles.underLineText}>{ScreenStrings.privacyPolicy}</Text>
+        <Text style={styles.underLineText}>
+          {' '}
+          <Text onPress={navigateToTnC}>{ScreenStrings.privacyPolicy}</Text>
+        </Text>
       </Text>
     </View>
   );

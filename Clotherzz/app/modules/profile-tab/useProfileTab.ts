@@ -17,10 +17,14 @@ const useProfileTab = () => {
     navigation.navigate(Routes.MyProfile);
   };
 
+  const navigateToTnC = () => {
+    navigation.navigate(Routes.TermsAndCondition);
+  };
   return {
     navigateToAddress,
     navigateToCart,
-    navigateToMyProfile
+    navigateToMyProfile,
+    navigateToTnC,
   };
 };
 

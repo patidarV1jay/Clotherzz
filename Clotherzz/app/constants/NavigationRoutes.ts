@@ -13,4 +13,5 @@ export enum Routes {
   Payment = 'Payment',
   MyProfile = 'My Profile',
   Wishlist = 'Wishlist',
+  TermsAndCondition = 'Terms And Conditions',
 }
