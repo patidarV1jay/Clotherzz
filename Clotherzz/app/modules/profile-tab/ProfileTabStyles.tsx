@@ -28,18 +28,41 @@ const styles = StyleSheet.create({
   subTitle: {
     fontWeight: '400',
     color: Colors.gray,
-    marginTop: verticleScale(5)
+    marginTop: verticleScale(5),
   },
   rightColumn: {
     marginLeft: horizontalScale(20),
   },
-  hrLine:{
+  hrLine: {
     borderTopWidth: 1,
     borderColor: Colors.offShade,
     marginTop: verticleScale(40),
-    marginBottom: verticleScale(60)
-    
-  }
+    marginBottom: verticleScale(60),
+  },
+  bottomContainer: {
+    backgroundColor: Colors.fadeWhite,
+    paddingHorizontal: horizontalScale(20),
+    paddingTop: verticleScale(20),
+  },
+  bottomText: {
+    color: Colors.dark,
+    fontWeight: '500',
+    fontSize: moderateScale(15),
+    marginBottom: verticleScale(25),
+  },
+  button: {
+    backgroundColor: Colors.purple,
+    marginTop: verticleScale(35),
+    height: verticleScale(80),
+    borderRadius: moderateScale(5),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  signOut: {
+    color: Colors.light,
+    fontWeight: '500',
+    fontSize: moderateScale(16),
+  },
 });
 
 export default styles;

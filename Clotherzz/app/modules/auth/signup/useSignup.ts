@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { ToastAndroid } from 'react-native';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useState } from 'react';
+import { ToastAndroid } from 'react-native';
 import { Routes, ToastStrings } from '../../../constants';
 
 const useSignup = () => {
@@ -20,10 +20,16 @@ const useSignup = () => {
     }
     return ToastAndroid.show(ToastStrings.validNumber, ToastAndroid.SHORT);
   };
+
+  const navigateToTnC = () =>{
+      navigation.navigate(Routes.TermsAndCondition)
+  }
+
   return {
     number,
     handleNumber,
     handleSubmit,
+    navigateToTnC
   };
 };
 

@@ -9,6 +9,7 @@ import {
   Payment,
   SearchScreen,
   MyProfile,
+  TermsAndCondition,
 } from '../modules';
 import { MainHeader, SecondaryHeader } from '../components';
 const MainStack = createNativeStackNavigator();
@@ -60,6 +61,15 @@ const RootStack = () => {
         component={MyProfile}
         options={{
           header: () => <SecondaryHeader title="My Profile" wishlist={true} />,
+        }}
+      />
+      <MainStack.Screen
+        name={Routes.TermsAndCondition}
+        component={TermsAndCondition}
+        options={{
+          header: () => (
+            <SecondaryHeader title="Terms And Conditions" wishlist={false} />
+          ),
         }}
       />
     </MainStack.Navigator>

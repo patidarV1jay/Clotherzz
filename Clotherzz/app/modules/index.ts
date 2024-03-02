@@ -8,3 +8,4 @@ export * from './address-profile';
 export * from './payment';
 export * from './my-profile';
 export * from './wishlist';
+export * from './tnC';
