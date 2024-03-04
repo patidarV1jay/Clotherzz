@@ -8,4 +8,6 @@ export default {
   noAddress: require('./noAddress.png'),
   phonepe: require('./phonepe.png'),
   gpay: require('./googlepay.png'),
+  emptyCart: require('./shopping.png'),
+  noOrder: require('./Box.png'),
 };
