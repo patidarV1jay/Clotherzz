@@ -20,11 +20,16 @@ const useProfileTab = () => {
   const navigateToTnC = () => {
     navigation.navigate(Routes.TermsAndCondition);
   };
+
+  const navigateToMyOrder = () => {
+    navigation.navigate(Routes.MyOrder);
+  };
   return {
     navigateToAddress,
     navigateToCart,
     navigateToMyProfile,
     navigateToTnC,
+    navigateToMyOrder,
   };
 };
 

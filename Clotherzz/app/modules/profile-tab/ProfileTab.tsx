@@ -1,13 +1,9 @@
-import { AddressBook, ShoppingCart } from 'phosphor-react-native';
 import React from 'react';
 import {
-  Pressable,
   Text,
-  Touchable,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
-import { moderateScale } from '../../themes';
 import styles from './ProfileTabStyles';
 import ScreensCard from './ScreensCard';
 import useProfileTab from './useProfileTab';
@@ -18,6 +14,7 @@ const ProfileTab = () => {
     navigateToCart,
     navigateToMyProfile,
     navigateToTnC,
+    navigateToMyOrder,
   } = useProfileTab();
 
   return (
@@ -42,7 +39,7 @@ const ProfileTab = () => {
           subtitle="Customize, Manage or Personalize Now"
         />
         <ScreensCard
-          navigateToScreen={navigateToMyProfile}
+          navigateToScreen={navigateToMyOrder}
           IconName="Notepad"
           title="My Orders"
           subtitle="Track, View, Manage, Shop Again"
