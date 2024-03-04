@@ -9,3 +9,4 @@ export * from './payment';
 export * from './my-profile';
 export * from './wishlist';
 export * from './tnC';
+export * from './my-order';
