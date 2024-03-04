@@ -1,14 +1,16 @@
 import { MapPin, ShoppingCart, Wallet } from 'phosphor-react-native';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import {
+  Animated,
   Image,
   Pressable,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
-  Animated,
 } from 'react-native';
+import { Images } from '../../assets';
+import { PriceDetails } from '../../components';
 import {
   Colors,
   horizontalScale,
@@ -16,10 +18,7 @@ import {
   verticleScale,
 } from '../../themes';
 import styles from './AddressScreenStyles';
-import { PriceDetails } from '../../components';
 import useAddressScreen from './useAddressScreen';
-import { Images } from '../../assets';
-import { useAnimation } from '../../hooks';
 
 const AddressScreen = () => {
   const { navigateToAddress, navigateToPayment } = useAddressScreen();

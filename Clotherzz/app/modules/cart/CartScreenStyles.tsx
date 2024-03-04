@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   },
   emptyContainer: {
     flex: 1,
+    alignItems: 'center',
   },
   itemDescription: {
     marginLeft: horizontalScale(10),
@@ -134,6 +135,36 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     marginTop: verticleScale(15),
+  },
+  emptyCartImage: {
+    height: verticleScale(450),
+    width: horizontalScale(200),
+    alignSelf: 'center',
+    marginTop: verticleScale(100),
+  },
+  boldText: {
+    fontWeight: '500',
+    color: Colors.dark,
+    fontSize: moderateScale(22),
+  },
+  normalText: {
+    fontWeight: '400',
+    color: Colors.gray,
+    fontSize: moderateScale(15),
+  },
+  button: {
+    marginTop: verticleScale(100),
+    width: '60%',
+    borderRadius: moderateScale(10),
+    borderColor: Colors.purple,
+    borderWidth: 2,
+  },
+  buttonText: {
+    color: Colors.purple,
+    fontWeight: '500',
+    padding: moderateScale(6),
+    alignSelf: 'center',
+    fontSize: moderateScale(18),
   },
 });
 

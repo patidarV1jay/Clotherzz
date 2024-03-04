@@ -1,7 +1,7 @@
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Routes } from '../../constants';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useCart = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
@@ -9,6 +9,7 @@ const useCart = () => {
   const [modalData, setModalData] = useState<string>('');
   const [size, setSize] = useState<string>('S');
   const [quantity, setQuantity] = useState<string>('5');
+  const [toggle, setToggle] = useState<boolean>(true);
 
   const navigateToAddress = () => {
     navigation.navigate(Routes.AddressScreen);
@@ -23,6 +24,12 @@ const useCart = () => {
     modalData === 'quantity' ? setQuantity(input) : setSize(input);
     handleVisibility('');
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setToggle(true);
+    }, 5000);
+  }, [toggle]);
   return {
     navigateToAddress,
     isVisible,
@@ -31,6 +38,8 @@ const useCart = () => {
     handleSizeAndQuantity,
     size,
     quantity,
+    toggle,
+    setToggle,
   };
 };
 

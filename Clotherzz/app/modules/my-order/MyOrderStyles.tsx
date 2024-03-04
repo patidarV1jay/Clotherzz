@@ -53,6 +53,31 @@ const styles = StyleSheet.create({
     color: Colors.green,
     fontSize: moderateScale(16),
   },
+  emptyOrder: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: Colors.light,
+  },
+  noOrder: {
+    height: verticleScale(450),
+    width: horizontalScale(300),
+    marginTop: verticleScale(80),
+  },
+  noOrderText: {
+    fontWeight: '500',
+    color: Colors.dark,
+    fontSize: moderateScale(18),
+  },
+  moreWidth: {
+    width: '60%',
+    alignItems: 'center',
+    marginTop: verticleScale(50)
+  },
+  hrLine:{
+    flex:1,
+    borderTopWidth:1,
+    borderColor: Colors.gray
+  }
 });
 
 export default styles;
