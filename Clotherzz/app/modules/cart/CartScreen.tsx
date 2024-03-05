@@ -27,7 +27,6 @@ const CartScreen = () => {
     toggle,
     setToggle,
   } = useCart();
-  console.log(toggle)
   return (
     <>
       {toggle ? (

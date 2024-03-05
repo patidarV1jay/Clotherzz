@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import useMyOrder from './useMyOrder';
-import styles from './MyOrderStyles';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { Images } from '../../assets';
+import styles from './MyOrderStyles';
+import useMyOrder from './useMyOrder';
 
 const MyOrder = () => {
   const { navigateToOrderDetails } = useMyOrder();

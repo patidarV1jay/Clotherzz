@@ -4,4 +4,5 @@ export interface FormikValuesTypes {
   pincode: string;
   locality: string;
   mobile: string;
+  city: string;
 }

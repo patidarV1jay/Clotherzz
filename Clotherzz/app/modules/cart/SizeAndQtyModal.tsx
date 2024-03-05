@@ -7,9 +7,9 @@ import {
   Text,
   View,
 } from 'react-native';
+import { Colors } from '../../themes';
 import styles from './CartScreenStyles';
 import { PropsType } from './types';
-import { Colors } from '../../themes';
 
 const SizeAndQtyModal = ({
   isVisible,
