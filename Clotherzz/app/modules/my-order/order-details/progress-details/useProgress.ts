@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import { verticleScale } from '../../../../themes';
 
 const useProgress = () => {
-  const [selectedStep, setSelectedStep] = useState(1);
+  const [selectedStep, setSelectedStep] = useState(0);
   const progress1 = useRef(new Animated.Value(0)).current;
   const progress2 = useRef(new Animated.Value(0)).current;
   const progress3 = useRef(new Animated.Value(0)).current;

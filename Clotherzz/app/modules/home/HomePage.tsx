@@ -17,35 +17,6 @@ const HomePage = () => {
   const { handleChange, number, data, navigateSearchScreen } = useHomePage();
   const [activeIndex, setactiveIndex] = useState<number>(0);
   const listref = useRef<FlatList>(null);
-  const renderDot = () => {
-    return data.map((dot, index) => {
-      if (activeIndex === index) {
-        return (
-          <View
-            key={dot.id}
-            style={{
-              height: 20,
-              width: 20,
-              backgroundColor: 'green',
-              borderRadius: 10,
-              marginLeft: 10,
-            }}></View>
-        );
-      } else {
-        return (
-          <View
-            key={dot.id}
-            style={{
-              height: 20,
-              width: 20,
-              backgroundColor: 'red',
-              borderRadius: 10,
-              marginLeft: 10,
-            }}></View>
-        );
-      }
-    });
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {

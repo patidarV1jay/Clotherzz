@@ -36,6 +36,12 @@ const OrderDetails = () => {
         </View>
         <View style={styles.topSpacing}>
           <Text style={[styles.grayText, styles.bottomSpacing]}>
+            Order Status
+          </Text>
+          <Progress />
+        </View>
+        <View style={styles.topSpacing}>
+          <Text style={[styles.grayText, styles.bottomSpacing]}>
             Order Information
           </Text>
           <View style={styles.itemContainer}>
@@ -52,12 +58,7 @@ const OrderDetails = () => {
             <Text style={styles.regularDarkText}>Cash On Delivery</Text>
           </View>
         </View>
-        <View style={styles.topSpacing}>
-          <Text style={[styles.grayText, styles.bottomSpacing]}>
-            Order Status
-          </Text>
-          <Progress />
-        </View>
+        
       </ScrollView>
     </View>
   );

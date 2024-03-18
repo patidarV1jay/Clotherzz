@@ -6,7 +6,7 @@ const useProfileTab = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
   const navigateToAddress = () => {
-    navigation.navigate(Routes.AddressProfile);
+    navigation.navigate(Routes.AddressProfile, { params: false });
   };
 
   const navigateToCart = () => {

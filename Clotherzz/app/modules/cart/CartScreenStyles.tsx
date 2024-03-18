@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderTopWidth: 1,
     alignSelf: 'center',
+    borderColor: Colors.offShade,
   },
   productImage: {
     height: verticleScale(250),
@@ -54,34 +55,6 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    backgroundColor: Colors.opaque,
-  },
-  modalWrapperContainer: {
-    backgroundColor: Colors.purple,
-    height: verticleScale(200),
-    borderTopRightRadius: moderateScale(10),
-    borderTopLeftRadius: moderateScale(10),
-  },
-  listItem: {
-    alignSelf: 'center',
-    backgroundColor: Colors.light,
-    margin: horizontalScale(5),
-    borderRadius: moderateScale(20),
-  },
-  listItemData: {
-    fontWeight: 'bold',
-    fontSize: moderateScale(15),
-    color: Colors.dark,
-  },
-  listItemWrapper: {
-    height: verticleScale(95),
-    width: horizontalScale(45),
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   emptyContainer: {
     flex: 1,

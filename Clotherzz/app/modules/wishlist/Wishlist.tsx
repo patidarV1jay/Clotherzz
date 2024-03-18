@@ -1,9 +1,19 @@
-import { FlatList, Image, Text, View } from 'react-native';
+import { FlatList, Image, Pressable, Text, View } from 'react-native';
 import { Images } from '../../assets';
 import { Colors } from '../../themes';
 import styles from './WishlistStyles';
+import { SizeAndQuantityModal } from '../../components';
+import useWishlist from './useWishlist';
 
 const Wishlist = () => {
+  const {
+    setisVisible,
+    isVisible,
+    handleSizeAndQuantity,
+    handleVisibility,
+    modalData,
+    size,
+  } = useWishlist();
   const data = [
     {
       image: Images.signup,
@@ -48,7 +58,9 @@ const Wishlist = () => {
                     Remove
                   </Text>
                   <View style={styles.vrLine} />
-                  <Text style={[styles.footerText]}>Add To Cart</Text>
+                  <Pressable onPress={handleVisibility}>
+                    <Text style={[styles.footerText]}>Add To Cart</Text>
+                  </Pressable>
                 </View>
               </View>
             </View>
@@ -56,6 +68,14 @@ const Wishlist = () => {
         }}
         key={2}
         numColumns={2}
+      />
+      <SizeAndQuantityModal
+        isVisible={isVisible}
+        handleSizeAndQuantity={handleSizeAndQuantity}
+        handleVisible={handleVisibility}
+        modalData={modalData}
+        addCartButton={true}
+        measurement={size}
       />
     </View>
   );

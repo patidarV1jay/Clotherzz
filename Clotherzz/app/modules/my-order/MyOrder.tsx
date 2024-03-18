@@ -24,7 +24,7 @@ const MyOrder = () => {
                 <Text style={styles.grayText}>05-12-2023</Text>
               </View>
               <Text style={styles.grayText}>
-                Tracking No.{' '}
+                Tracking No.
                 <Text style={styles.orderNoText}>IWERTD82657855</Text>
               </Text>
               <View style={[styles.rowContainer, styles.bottomSpace]}>
