@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import useMyOrder from './useMyOrder';
-import styles from './MyOrderStyles';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { Images } from '../../assets';
+import styles from './MyOrderStyles';
+import useMyOrder from './useMyOrder';
 
 const MyOrder = () => {
   const { navigateToOrderDetails } = useMyOrder();
@@ -24,7 +24,7 @@ const MyOrder = () => {
                 <Text style={styles.grayText}>05-12-2023</Text>
               </View>
               <Text style={styles.grayText}>
-                Tracking No.{' '}
+                Tracking No.
                 <Text style={styles.orderNoText}>IWERTD82657855</Text>
               </Text>
               <View style={[styles.rowContainer, styles.bottomSpace]}>

@@ -1,6 +1,3 @@
-import { View, Text, Pressable, Image, TouchableOpacity } from 'react-native';
-import React from 'react';
-import styles from './CartScreenStyles';
 import {
   CaretDown,
   MapPin,
@@ -8,12 +5,14 @@ import {
   Trash,
   Wallet,
 } from 'phosphor-react-native';
-import { Colors, moderateScale } from '../../themes';
-import useCart from './useCart';
+import React from 'react';
+import { Image, Pressable, Text, TouchableOpacity, View } from 'react-native';
 import { Images } from '../../assets';
-import SizeAndQtyModal from './SizeAndQtyModal';
-import { PriceDetails } from '../../components';
+import { Colors, moderateScale } from '../../themes';
+import styles from './CartScreenStyles';
+import useCart from './useCart';
 import { HandCoins, SealCheck } from 'phosphor-react-native';
+import { PriceDetails, SizeAndQuantityModal } from '../../components';
 
 const CartScreen = () => {
   const {
@@ -27,7 +26,6 @@ const CartScreen = () => {
     toggle,
     setToggle,
   } = useCart();
-  console.log(toggle)
   return (
     <>
       {toggle ? (
@@ -47,9 +45,9 @@ const CartScreen = () => {
             <View style={styles.header}>
               <ShoppingCart size={28} weight="bold" color={Colors.purple} />
               <View style={styles.hrLine} />
-              <MapPin size={28} />
+              <MapPin size={28} color={Colors.offShade} />
               <View style={styles.hrLine} />
-              <Wallet size={28} />
+              <Wallet size={28} color={Colors.offShade} />
             </View>
             <View style={styles.cartItemContainer}>
               <Pressable style={styles.trashIcon}>
@@ -105,11 +103,12 @@ const CartScreen = () => {
               <Text style={styles.placeOrderText}>Place Order</Text>
             </Pressable>
           </View>
-          <SizeAndQtyModal
+          <SizeAndQuantityModal
             isVisible={isVisible}
             handleVisible={handleVisibility}
             modalData={modalData}
             handleSizeAndQuantity={handleSizeAndQuantity}
+            addCartButton={false}
           />
         </View>
       )}

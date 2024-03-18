@@ -16,6 +16,7 @@ const useAddAddress = () => {
       mobile: '',
       pincode: '',
       locality: '',
+      city: '',
     },
     validationSchema: AddressSchema,
     onSubmit: () => {
@@ -28,14 +29,14 @@ const useAddAddress = () => {
 
   const fetchFunc = async () => {
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await axios.get(
         'https://api.postalpincode.in/pincode/' + formik.values.pincode,
       );
       setPinCodeArea(response?.data[0]);
-      setLoading(false)
+      setLoading(false);
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       console.log(error);
     }
   };
@@ -51,7 +52,7 @@ const useAddAddress = () => {
   return {
     formik,
     pincodeArea,
-    loading
+    loading,
   };
 };
 

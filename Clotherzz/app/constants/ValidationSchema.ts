@@ -18,6 +18,7 @@ export const AddressSchema = Yup.object().shape({
     .matches(NumberRegEx, ValidationStrings.phoneInvalid),
   pincode: Yup.string().required(ValidationStrings.required),
   locality: Yup.string().required(ValidationStrings.required),
+  city: Yup.string().required(ValidationStrings.required),
 });
 
 export const ProfileSchema = Yup.object().shape({

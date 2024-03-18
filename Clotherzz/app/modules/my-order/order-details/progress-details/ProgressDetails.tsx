@@ -1,175 +1,159 @@
-import { Check } from 'phosphor-react-native';
 import React from 'react';
-import { Animated, Text, View } from 'react-native';
-import { Colors, moderateScale, verticleScale } from '../../../../themes';
+import { Animated, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Colors,
+  horizontalScale,
+  moderateScale,
+  verticleScale,
+} from '../../../../themes';
 import styles from './ProgressDetailtsStyles';
 import useProgress from './useProgress';
+import { Check } from 'phosphor-react-native';
 
 const Progress = () => {
   const {
     selectedStep,
+    handleSlider,
     progress1,
     progress2,
     progress3,
     progress4,
-    handleSlider,
   } = useProgress();
-
   return (
     <View style={styles.container}>
       <View style={styles.wrapperContainer}>
-        <View
-          style={[
-            styles.dot,
-            { backgroundColor: selectedStep > 0 ? Colors.green : Colors.gray },
-          ]}>
-          <View>
+        <View>
+          <View
+            style={[
+              styles.dot,
+              {
+                backgroundColor: selectedStep > 0 ? Colors.green : Colors.gray,
+              },
+            ]}>
             {selectedStep > 0 ? (
-              <Check color={Colors.light} size={moderateScale(18)} />
+              <Check color={Colors.light} size={moderateScale(24)} />
             ) : (
-              <Check color={Colors.fadeWhite} size={moderateScale(18)} />
+              <Check color={Colors.offShade} size={moderateScale(24)} />
             )}
-            <Text
-              style={[
-                styles.text,
-                selectedStep > 0 ? styles.greenColor : styles.grayColor,
-              ]}>
-              Confirmed
-            </Text>
           </View>
+          <Text style={styles.orderStatusText}>out for delivery</Text>
+          <View style={styles.grayLine} />
         </View>
-
-        <View style={styles.grayLine} />
-        <View
-          style={[
-            styles.dot,
-            {
-              backgroundColor:
-                selectedStep > 1 ? Colors.green : Colors.offShade,
-            },
-          ]}>
-          <View>
+        <View>
+          <View
+            style={[
+              styles.dot,
+              {
+                backgroundColor: selectedStep > 1 ? Colors.green : Colors.gray,
+              },
+            ]}>
             {selectedStep > 1 ? (
-              <Check color={Colors.light} size={moderateScale(18)} />
+              <Check color={Colors.light} size={moderateScale(24)} />
             ) : (
-              <Check color={Colors.fadeWhite} size={moderateScale(18)} />
+              <Check color={Colors.offShade} size={moderateScale(24)} />
             )}
-            <Text
-              style={[
-                styles.text,
-                selectedStep > 1 ? styles.greenColor : styles.grayColor,
-              ]}>
-              Preparing Your Order
-            </Text>
           </View>
+          <Text style={styles.orderStatusText}>out for delivery</Text>
+          <View style={styles.grayLine} />
         </View>
-        <View style={styles.grayLine} />
-        <View
-          style={[
-            styles.dot,
-            {
-              backgroundColor:
-                selectedStep > 2 ? Colors.green : Colors.offShade,
-            },
-          ]}>
-          <View>
+        <View>
+          <View
+            style={[
+              styles.dot,
+              {
+                backgroundColor: selectedStep > 2 ? Colors.green : Colors.gray,
+              },
+            ]}>
             {selectedStep > 2 ? (
-              <Check color={Colors.light} size={moderateScale(18)} />
+              <Check color={Colors.light} size={moderateScale(24)} />
             ) : (
-              <Check color={Colors.fadeWhite} size={moderateScale(18)} />
+              <Check color={Colors.offShade} size={moderateScale(24)} />
             )}
-            <Text
-              style={[
-                styles.text,
-                selectedStep > 2 ? styles.greenColor : styles.grayColor,
-              ]}>
-              Shipped
-            </Text>
           </View>
+          <Text style={styles.orderStatusText}>out for delivery</Text>
+          <View style={styles.grayLine} />
         </View>
-        <View style={styles.grayLine} />
-        <View
-          style={[
-            styles.dot,
-            {
-              backgroundColor:
-                selectedStep > 3 ? Colors.green : Colors.offShade,
-            },
-          ]}>
-          <View>
+        <View>
+          <View
+            style={[
+              styles.dot,
+              {
+                backgroundColor: selectedStep > 3 ? Colors.green : Colors.gray,
+              },
+            ]}>
             {selectedStep > 3 ? (
-              <Check color={Colors.light} size={moderateScale(18)} />
+              <Check color={Colors.light} size={moderateScale(24)} />
             ) : (
-              <Check color={Colors.fadeWhite} size={moderateScale(18)} />
+              <Check color={Colors.offShade} size={moderateScale(24)} />
             )}
-            <Text
-              style={[
-                styles.text,
-                selectedStep > 3 ? styles.greenColor : styles.grayColor,
-              ]}>
-              Out For Delivery
-            </Text>
           </View>
+          <Text style={styles.orderStatusText}>out for delivery</Text>
+          <View style={styles.grayLine} />
         </View>
-        <View style={styles.grayLine} />
-        <View
-          style={[
-            styles.dot,
-            {
-              backgroundColor:
-                selectedStep > 4 ? Colors.green : Colors.offShade,
-            },
-          ]}>
-          <View>
+        <View>
+          <View
+            style={[
+              styles.dot,
+              {
+                backgroundColor: selectedStep > 4 ? Colors.green : Colors.gray,
+              },
+            ]}>
             {selectedStep > 4 ? (
-              <Check color={Colors.light} size={moderateScale(18)} />
+              <Check color={Colors.light} size={moderateScale(24)} />
             ) : (
-              <Check color={Colors.fadeWhite} size={moderateScale(18)} />
+              <Check color={Colors.offShade} size={moderateScale(24)} />
             )}
-            <Text
-              style={[
-                styles.text,
-                selectedStep > 4 ? styles.greenColor : styles.grayColor,
-              ]}>
-              Delivered
-            </Text>
           </View>
+          <Text style={styles.orderStatusText}>out for delivery</Text>
         </View>
       </View>
-      <View style={styles.absoluteContainer}>
+      <View
+        style={[
+          styles.wrapperContainer,
+          { position: 'absolute', paddingHorizontal: horizontalScale(10) },
+        ]}>
         <Animated.View
           style={{
-            width: 2,
             height: progress1,
+            backgroundColor: Colors.green,
+            width: 2,
             marginTop: verticleScale(54),
-            backgroundColor: 'green',
+            marginLeft: horizontalScale(10),
           }}
         />
         <Animated.View
           style={{
-            width: 2,
             height: progress2,
+            backgroundColor: Colors.green,
+            width: 2,
             marginTop: verticleScale(54),
-            backgroundColor: 'green',
+            marginLeft: horizontalScale(10),
           }}
         />
         <Animated.View
           style={{
-            width: 2,
             height: progress3,
+            backgroundColor: Colors.green,
+            width: 2,
             marginTop: verticleScale(54),
-            backgroundColor: 'green',
+            marginLeft: horizontalScale(10),
           }}
         />
         <Animated.View
           style={{
-            width: 2,
             height: progress4,
+            backgroundColor: Colors.green,
+            width: 2,
             marginTop: verticleScale(54),
-            backgroundColor: 'green',
+            marginLeft: horizontalScale(10),
           }}
         />
       </View>
+      <TouchableOpacity
+        style={{ backgroundColor: 'black' }}
+        onPress={handleSlider}>
+        <Text>jey</Text>
+      </TouchableOpacity>
     </View>
   );
 };

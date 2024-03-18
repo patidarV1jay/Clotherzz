@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: horizontalScale(10),
     marginBottom: verticleScale(40),
+    zIndex: 1,
   },
   addAddressText: {
     fontWeight: 'bold',

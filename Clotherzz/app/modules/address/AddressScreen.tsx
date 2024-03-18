@@ -41,7 +41,9 @@ const AddressScreen = () => {
           <Text style={styles.addressText}>Address, Locality</Text>
           <Text style={styles.addressText}>District, State, 201301</Text>
           <Text style={styles.addressText}>99999999</Text>
-          <TouchableOpacity style={styles.addAddressButton}>
+          <TouchableOpacity
+            style={styles.addAddressButton}
+            onPress={navigateToAddress}>
             <Text style={styles.addAddressText}>Edit or Add Address</Text>
           </TouchableOpacity>
         </View>

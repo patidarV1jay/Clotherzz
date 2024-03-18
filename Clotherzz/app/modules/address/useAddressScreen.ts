@@ -6,7 +6,7 @@ const useAddressScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
   const navigateToAddress = () => {
-    navigation.navigate(Routes.AddressProfile);
+    navigation.navigate(Routes.AddressProfile, { params: true });
   };
 
   const navigateToPayment = () => {
@@ -15,7 +15,7 @@ const useAddressScreen = () => {
 
   return {
     navigateToAddress,
-    navigateToPayment
+    navigateToPayment,
   };
 };
 
